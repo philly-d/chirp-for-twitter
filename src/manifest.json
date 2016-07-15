@@ -1,30 +1,48 @@
 {
   "manifest_version": 2,
-  "homepage_url": "https://github.com/schovi/webpack-chrome-extension",
+  "name": "Chirp for Twitter",
+  "version": "2016.7.14",
+  "description": "Screenshot and tweet articles in one click, see Twitter conversations right on the page.",
   "content_scripts": [
     {
+      "matches": ["*://*.twitter.com/*"],
+      "js": ["twitter.js"],
+      "all_frames": true
+    },
+    {
       "matches": ["<all_urls>"],
-      "js": ["content/index.js"]
+      "js": ["content.js"]
     }
   ],
   "background": {
     "persistent": true,
-    "scripts": ["background/index.js"]
+    "scripts": ["background.js"]
   },
-  "page_action": {
-    "default_title": "Webpack chrome extension popup action",
-    "default_popup": "popup/index.html"
-  },
-  "chrome_url_overrides" : {
-    "newtab": "newtab/index.html"
+  "browser_action": {
+    "default_title": "Tweet this page"
   },
   "permissions": [
+    "webNavigation",
+    "contextMenus",
+    "cookies",
+    "tabs",
+    "windows",
+    "storage",
+    "notifications",
+    "alarms",
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
     "background",
-    "tabs"
+    "<all_urls>",
+    "chrome://favicon/"
   ],
   "icons": {
-    "16": "icons/webpack-16.png",
-    "32": "icons/webpack-32.png",
-    "128": "icons/webpack-128.png"
-  }
+    "16": "assets/icons/tweetshot-16.png",
+    "32": "assets/icons/tweetshot-32.png",
+    "128": "assets/icons/tweetshot-128.png"
+  },
+  "web_accessible_resources": [
+    "font/*"
+  ]
 }

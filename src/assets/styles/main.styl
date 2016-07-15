@@ -1,0 +1,82 @@
+/*
+    Styles forthcoming...
+*/
+
+twClay = #D35A29
+twBlue = #3a9de6
+twLightBlue = #3abaff
+// twLightBlue = #3e88f6
+twGrey = #B3B3B3
+twVeryBlue = #0099ec
+tweetGreen = #54A162
+tweetBlue = #62b1fe
+$fontFamily = Avenir, 'Lucida Grande', Tahoma, Sans-Serif !important
+$boxWidth = 285px
+$maxZIndex = 2147483647
+
+.twc-root
+    font-size 14px
+    line-height normal
+    -webkit-font-smoothing auto
+    font-family $fontFamily
+    z-index $maxZIndex
+    text-align left
+    letter-spacing 0
+    text-transform none
+    text-shadow none
+    
+    *
+        font-family $fontFamily !important
+        line-height normal
+        
+    .twcicn:before
+        line-height inherit !important
+
+    .twc-app
+        box-shadow 0px 2px 5px #c3c3c3
+        color #4A4A4A
+        font-weight normal
+        background-color white
+        border 1px solid #B3B3B3
+        position fixed
+        width $boxWidth
+        z-index $maxZIndex
+        right 10px
+        bottom 10px
+        max-height 550px
+        border-radius 3px
+        
+        .twc-active-view
+            position relative
+            max-height 500px
+            overflow-y scroll
+            overflow-x hidden
+            height 0px
+            &.twc-is-expanded
+                height auto
+        
+    .twc-is-visible
+        display block
+    .twc-is-hidden
+        display none
+        
+
+    .public-DraftEditorPlaceholder-root
+        width 100%
+    .public-DraftEditorPlaceholder-inner
+        text-overflow ellipsis
+        white-space nowrap
+        overflow hidden
+        
+    .__react_component_tooltip.show
+        opacity 1 !important
+
+
+
+@keyframes rotate {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}
+
+
+

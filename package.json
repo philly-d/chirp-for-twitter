@@ -1,7 +1,8 @@
 {
-  "name": "WebpackChromeExtension",
-  "version": "0.3.1",
-  "description": "Bootstrap playground for developing Chrome extensions with all new features like Webpack, Babel, React and almost everything you want.",
+  "name": "chirp-for-twitter",
+  "productName": "Chirp for Twitter",
+  "version": "0.0.1",
+  "description": "Start and join Twitter conversations anywhere on the web, right from the page, with easy tweeting and quote-sharing.",
   "private": true,
   "scripts": {
     "start": "npm run dev",
