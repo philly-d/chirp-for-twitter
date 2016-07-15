@@ -11,9 +11,9 @@ import ManifestPlugin from '../manifest/plugin'
 // If you want to use any of style preprocessor, add related npm package + loader and uncomment following line
 var styleLoaders = {
   'css': '',
-  // 'less': '!less-loader',
+  'less': '!less-loader',
   // 'scss|sass': '!sass-loader',
-  // 'styl': '!stylus-loader'
+  'styl': '!stylus-loader'
 };
 
 function makeStyleLoaders() {
@@ -39,7 +39,7 @@ function configGenerator(Manifest) {
     ///// Lowlevel config
     cache: isDevelopment,
     debug: isDevelopment,
-    devtool: isDevelopment ? 'cheap-module-eval-source-map' : '',
+    devtool: isDevelopment ? '#eval-source-map' : '', //'cheap-module-eval-source-map' : '',
     context: __dirname,
     node: {__dirname: true},
 
@@ -183,7 +183,7 @@ function configGenerator(Manifest) {
           {
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            loader: "babel-loader"
+            loader: "babel",
           }
         ])
 
@@ -191,7 +191,7 @@ function configGenerator(Manifest) {
         loaders = loaders.concat([
           {
             test: /\.json/,
-            exclude: /node_modules/,
+            // exclude: /node_modules/,
             loader: "json-loader"
           }
         ])
